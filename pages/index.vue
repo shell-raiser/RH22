@@ -12,12 +12,12 @@
     <blockquote>
       <ul>
         <li>
-          <h6> This project (supposedly) uses</h6>
+          <h6> This project uses</h6>
         </li>
         <ul>
           <li><a href="https://nuxtjs.org/">Nuxt JS </a>for frontend/SSG, <a
               href="https://www.github.com/dragos-efy/efy">EFY</a> for UI</li>
-          <li><a href="https://ipfs.io/">IPFS</a> & <a href="https://filecoin.io/">Filecoin</a> for website hosting and
+          <li><a href="https://ipfs.io/">IPFS</a> & <a href="https://filecoin.io/">Filecoin</a> for hosting and
             file storage (via <a href="https://fleek.co/">fleek</a>) </li>
           <li><a href="https://capacitorjs.com/">Capacitor</a> for native builds</li>
         </ul>
