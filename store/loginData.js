@@ -1,5 +1,6 @@
 export const state = () => ({
-    user: false
+    user: false,
+    usernames: []
 })
 
 export const mutations = {
@@ -18,6 +19,12 @@ export const mutations = {
     // }
     toggle: (state) => {
         state.user = !state.user
+    },
+    login:(state, username)=>{
+        state.user = username
+    },
+    logout:(state)=>{
+        state.user = false
     }
 }
 
