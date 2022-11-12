@@ -8,26 +8,29 @@
         <header>
             <h1>Login / Sign-up</h1>
             <!-- <div style="text-align: center;align-items:center; right: 50%;"> -->
-                <form action="">
-                    <label for="input-type-text">Username</label>
-                    <input id="input-type-text" type="text">
+            <form action="">
+                <label for="input-type-text">Username</label>
+                <input id="input-type-text" type="text">
 
 
-                    <label for="input-type-password">Input Password</label>
-                    <input id="input-type-password" type="password">
-                </form>
+                <label for="input-type-password">Input Password</label>
+                <input id="input-type-password" type="password">
+            </form>
             <!-- </div> -->
             <button>Login</button>
             or
             <button>Sign-up</button>
         </header>
-
+        
         <!-- <img :src=myFile /> -->
         <!-- <div id="container"></div> -->
         <!-- {publicKey && <div>user: {publicKey}</div>} -->
+        <footerComponent/>
     </div>
 </template>
 <script>
+import footerComponent from '../components/footer.vue'
+
 import fleekStorage from '@fleekhq/fleek-storage-js';
 var myFile;
 
@@ -69,7 +72,8 @@ export default {
     // },
     methods: {
 
-    }
+    },
+  components:{footerComponent}
 }
 
 </script>

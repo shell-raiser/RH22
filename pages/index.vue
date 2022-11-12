@@ -48,18 +48,14 @@
       </article>
     </section>
 
-    <footer>
-      <p>{Decentralized Chat App} made by <a href="https://github.com/shell-raiser">Shailesh</a>
-        <br><a target="_blank" href="https://github.com/shell-raiser/RH22">
-          learn more on the
-          GitHub page</a>
-      </p>
-    </footer>
+    <footerComponent />
   </div>
 </template>
 
 <script>
+import footerComponent from '../components/footer.vue'
 export default {
-  name: 'About'
+  name: 'About',
+  components:{footerComponent}
 }
 </script>
