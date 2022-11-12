@@ -21,4 +21,5 @@ export const mutations = {
     }
 }
 
-// export const plugins = [vuexLocal.plugin]
+// import createPersistedState from "vuex-persistedstate";
+// export const plugins = [createPersistedState()]

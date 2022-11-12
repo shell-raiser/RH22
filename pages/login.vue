@@ -8,13 +8,13 @@
         <header>
             <h1>Login / Sign-up</h1>
             <!-- <div style="text-align: center;align-items:center; right: 50%;"> -->
-            <form action="" v-if="!$store.state.loginData.user">
-                <label for="input-type-text">Username</label>
-                <input id="input-type-text" type="text">
+            <form v-if="!$store.state.loginData.user">
+                <label for="username">Username</label>
+                <input id="username" type="text">
 
 
-                <label for="input-type-password">Input Password</label>
-                <input id="input-type-password" type="password">
+                <label for="password">Input Password</label>
+                <input id="password" type="password">
             </form>
             <!-- </div> -->
             <div v-if="!$store.state.loginData.user">
@@ -22,7 +22,7 @@
                 or
                 <button>Sign-up</button>
             </div>
-            <button v-if="$store.state.loginData.user">Log out</button>
+            <button v-if="$store.state.loginData.user" @click="logout">Log out</button>
         </header>
 
         <!-- <img :src=myFile /> -->
@@ -78,6 +78,9 @@ export default {
         login() {
             this.$store.commit('loginData/toggle')
         },
+        logout() {
+            this.$store.commit('loginData/toggle')
+        }
     },
     components: { footerComponent }
 }
