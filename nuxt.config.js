@@ -1,5 +1,8 @@
-// import 'efy/efy.css';
 export default {
+
+  env: {
+    baseUrl: process.env.BASE_URL
+  },
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 

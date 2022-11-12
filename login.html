@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+
+<body>
+    <!-- <iframe id="identity" frameborder="0" class="" src="https://identity.bitclout.com/embed?v=2"
+        style="display: none;"></iframe> -->
+    
+    <script>
+
+
+        // const login = window.open('https://identity.bitclout.com/log-in');
+        // const signUp = window.open('https://identity.bitclout.com/sign-up?testnet=true');
+        // const logout = window.open('https://identity.bitclout.com/logout?publicKey=BC123?testnet=true');
+        // const approve = window.open('https://identity.bitclout.com/approve?tx=0abf35a?testnet=true');
+        console.log(login)
+        // Can be added to any path for testnet bitclout and bitcoin addresses
+        // const testnet = window.open('https://identity.bitclout.com/log-in?testnet=true');
+
+        // const childWindow = document.getElementById('identity').contentWindow;
+        window.addEventListener('message', message => {
+            console.log(message);
+            // console.log(message);
+
+            // const { data: { id: id, method: method, payload: payload } } = message;
+
+            // console.log(id);
+            // console.log(method);
+            // console.log(payload);
+
+            // if (method == 'initialize') {
+            //     handleInit(message);
+            // } else if (method == 'login') {
+            //     handleLogin(payload);
+            // }
+        });
+
+    </script>
+</body>
+
+</html>
