@@ -18,18 +18,51 @@
     </header>
 </template>
 <script>
-var userList
+var userList;
+import fleek from '@fleekhq/fleek-storage-js';
 async function smth() {
     userList = await fetch('https://storageapi.fleek.co/1e4f9433-e9a2-4412-a561-9a1ddf54e93c-bucket/users.json')
     userList = await userList.json()
-    console.log(userList)
+    // console.log(userList)
 }
 smth()
+var apikey = process.env.FLEEK_API_KEY;
+// console.log(process.env.FLEEK_API_KEY)
+var apisecret = process.env.FLEEK_API_SECRET;
+// console.log(process.env.FLEEK_API_SECRET)
 export default {
     methods: {
         login() {
             this.$store.commit('loginData/login', document.getElementById("username").value)
             console.log(this.$store.state.loginData.user)
+        },
+
+        async alldataUpload(data) {
+            const input = {
+                apiKey: apikey,
+                apiSecret: apisecret,
+                key: 'users.json',
+                data,
+            };
+            try {
+                const result = await fleek.upload(input);
+                console.log("uploaded")
+            } catch (e) {
+                console.log('error', e);
+            }
+        },
+        async deleteAllData() {
+            console.log("deleted")
+            try {
+                const result = await fleek.deleteFile({
+                    apiKey: apikey,
+                    apiSecret: apisecret,
+                    key: 'users.json',
+                    bucket: '1e4f9433-e9a2-4412-a561-9a1ddf54e93c-bucket',
+                });
+            } catch (e) {
+                console.log('error', e);
+            }
         },
         signUp() {
             username = document.getElementById("username").value
@@ -39,53 +72,21 @@ export default {
                 document.getElementById("alert").innerHTML = "Username Exists!"
             }
             else {
-                async function getDB() {
-
-
-                    const res = await fetch('https://storageapi.fleek.co/1e4f9433-e9a2-4412-a561-9a1ddf54e93c-bucket/users.json')
-
-                    var alldata = await res.json();
-                    // alldata.push(theElement);
-                    alldata.usernames.push(username)
-
-
-                    // delte old file and create new
-                    await deleteAllData()
-                    // upload alldata
-                    await alldataUpload(JSON.stringify(alldata));
-
-                }
-                getDB();
+                this.getDB();
                 document.getElementById("alert").innerHTML = "Account Created"
                 this.login()
             }
         },
-        async alldataUpload(data) {
-            const input = {
-                apiKey,
-                apiSecret,
-                key: 'users.json',
-                data,
-            };
+        async getDB() {
+            const res = await fetch('https://storageapi.fleek.co/1e4f9433-e9a2-4412-a561-9a1ddf54e93c-bucket/users.json')
+            var alldata = await res.json();
+            // alldata.push(theElement);
+            alldata.usernames.push(username)
+            // delte old file and create new
+            await this.deleteAllData()
 
-            try {
-                const result = await fleek.upload(input);
-            } catch (e) {
-                console.log('error', e);
-            }
-        },
-        async deleteAllData() {
-            try {
-                const result = await fleek.deleteFile({
-                    apiKey,
-                    apiSecret,
-                    key: 'alldata.json',
-                    bucket: '1e4f9433-e9a2-4412-a561-9a1ddf54e93c-bucket',
-                });
-            } catch (e) {
-                console.log('error', e);
-            }
-
+            // upload alldata
+            await this.alldataUpload(JSON.stringify(alldata));
         }
 
     }
