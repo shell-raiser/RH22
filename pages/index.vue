@@ -6,7 +6,7 @@
       <a href="/login">Login</a>
     </nav>
     <header>
-      <h1>DeChat</h1>
+      <h1> <a>DeChat</a>, A Decentralized Chat App</h1>
       <p>Get Back your freedom from centralized corporate chat apps</p>
     </header>
     <blockquote>
@@ -56,6 +56,6 @@
 import footerComponent from '../components/footer.vue'
 export default {
   name: 'About',
-  components:{footerComponent}
+  components: { footerComponent }
 }
 </script>
