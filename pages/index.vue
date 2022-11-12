@@ -1,7 +1,7 @@
 <template>
   <div>
     <nav>
-      <a href="/friends">Go to App</a>
+      <a href="/friends">Go to Chats</a>
       |
       <a href="/login">Login</a>
     </nav>
@@ -9,6 +9,7 @@
       <h1> <a>DeChat</a>, A Decentralized Chat App</h1>
       <p>Get Back your freedom from centralized corporate chat apps</p>
     </header>
+    
     <blockquote>
       <ul>
         <li>

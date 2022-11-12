@@ -8,7 +8,7 @@
         <header>
             <h1>Login / Sign-up</h1>
             <!-- <div style="text-align: center;align-items:center; right: 50%;"> -->
-            <form action="">
+            <form action="" v-if="!$store.state.loginData.user">
                 <label for="input-type-text">Username</label>
                 <input id="input-type-text" type="text">
 
@@ -17,15 +17,18 @@
                 <input id="input-type-password" type="password">
             </form>
             <!-- </div> -->
-            <button>Login</button>
-            or
-            <button>Sign-up</button>
+            <div v-if="!$store.state.loginData.user">
+                <button @click="login">Login</button>
+                or
+                <button>Sign-up</button>
+            </div>
+            <button v-if="$store.state.loginData.user">Log out</button>
         </header>
-        
+
         <!-- <img :src=myFile /> -->
         <!-- <div id="container"></div> -->
         <!-- {publicKey && <div>user: {publicKey}</div>} -->
-        <footerComponent/>
+        <footerComponent />
     </div>
 </template>
 <script>
@@ -40,6 +43,7 @@ export default {
         // const apiKey = process.env.FLEEK_API_KEY;
         // console.log(apiKey)
         // const apiSecret = process.env.FLEEK_API_SECRET;
+        console.log(this.$store.state.loginData.user)
         async function caller() {
             // myFile = await fleekStorage.get({
             //     apiKey: process.env.FLEEK_API_KEY,
@@ -71,9 +75,11 @@ export default {
     // data:{
     // },
     methods: {
-
+        login() {
+            this.$store.commit('loginData/toggle')
+        },
     },
-  components:{footerComponent}
+    components: { footerComponent }
 }
 
 </script>
