@@ -1,7 +1,7 @@
 <template>
   <div>
     <nav>
-      <a href="/friends">Go to Chats</a>
+      <a href="/allChats">Go to Chats</a>
       |
       <a href="/login">Login</a>
     </nav>
@@ -9,13 +9,14 @@
       <h1> <a>DeChat</a>, A Decentralized Chat App</h1>
       <p>Get Back your freedom from centralized corporate chat apps</p>
     </header>
-    
+
     <blockquote>
       <ul>
         <li>
           <h6> This project uses</h6>
         </li>
         <ul>
+          <li><a href="https://internetcomputer.org/">Internet Computer (ICP) blockchain </a> for hosting</li>
           <li><a href="https://nuxtjs.org/">Nuxt JS </a>for frontend/SSG, <a
               href="https://www.github.com/dragos-efy/efy">EFY</a> for UI</li>
           <li><a href="https://ipfs.io/">IPFS</a> & <a href="https://filecoin.io/">Filecoin</a> for hosting and
