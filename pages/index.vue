@@ -6,7 +6,7 @@
       <a href="/login">Login</a>
     </nav>
     <header>
-      <h1>{Decentralized Chat App}</h1>
+      <h1>DeChat</h1>
       <p>Get Back your freedom from centralized corporate chat apps</p>
     </header>
     <blockquote>
@@ -27,7 +27,7 @@
     </blockquote>
     <section>
       <h4>
-        Why {Decentralized Chat App} ?
+        Why DeChat ?
       </h4>
       <dfn>and the problem with
         Web2 Social Media
