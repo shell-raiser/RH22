@@ -8,20 +8,7 @@
         <header>
             <h1>Login / Sign-up</h1>
             <!-- <div style="text-align: center;align-items:center; right: 50%;"> -->
-            <form v-if="!$store.state.loginData.user">
-                <label for="username">Username</label>
-                <input id="username" type="text">
-
-
-                <label for="password">Input Password</label>
-                <input id="password" type="password">
-            </form>
-            <!-- </div> -->
-            <div v-if="!$store.state.loginData.user">
-                <button @click="login">Login</button>
-                or
-                <button>Sign-up</button>
-            </div>
+            <signVue/>
             <button v-if="$store.state.loginData.user" @click="logout">Log out</button>
         </header>
 
@@ -32,7 +19,8 @@
     </div>
 </template>
 <script>
-import footerComponent from '../components/footer.vue'
+import footerComponent from '../components/footer.vue';
+import signVue from '~/components/sign.vue';
 
 import fleekStorage from '@fleekhq/fleek-storage-js';
 var myFile;
@@ -75,14 +63,11 @@ export default {
     // data:{
     // },
     methods: {
-        login() {
-            this.$store.commit('loginData/toggle')
-        },
         logout() {
             this.$store.commit('loginData/toggle')
         }
     },
-    components: { footerComponent }
+    components: { footerComponent,signVue }
 }
 
 </script>
